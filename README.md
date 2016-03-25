@@ -23,4 +23,15 @@ variable2 = inputList[1]</br>
 .</br>
 etc</p>
 
-<p>Another thing to talk about is the convertion between string, char and int. I'm going to break down to <b>"everything to string"</b>, <b>"char to int"</b>, <b>"int to char"</b> and <b>"string to int"</b></p>
+<p>Another thing to talk about is the convertion between string, char and int. I'm going to break down to <b>"everything to string"</b>, <b>"char to int and int to char"</b> and <b>"string to int"</b></p>
+
+<ul>
+  <li>everything to string</br>
+  <p>In this bullet point I'm talking about casting the excat same content of the variable to string. The function we need is only str(), it accepts one parameter which is the stuff we want to cast to a string. It will return a string that contains the original context but in string format</p></li>
+  <li>char to int and int to char</br>
+  <p>What wee want to do hewre is to convert the char to it's correspoding ASCII value, and the finction to use is ord(). It accpets one char parameter, and returns a int corresponding to its ASCII value. To do thid job backwords, we can use function chr(). It accepts one int parameter and returns a char that corresponds to the int ASCII value</p></li>
+  <li>string to int</br>
+  <p>In Java we have Integer.ParseInt(String s) for this. In Python, we've got int(). It can accept a string that its context are puyly number without spaces in the middle, and convert the data type to int.</p></li>
+</ul>
+
+<p>One last thing about Python in this problem. Python is the only on e that I don't have to worry about the integer overflow. Even if I started the variable like an int, it will automatically charnge to long by itself when it needs to</p>
