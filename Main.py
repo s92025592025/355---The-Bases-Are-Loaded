@@ -1,18 +1,21 @@
 def main():
 	while True:
-		base1, base2, number = raw_input().split()
-		base1 = int(base1)
-		base2 = int(base2)
+		inputString = raw_input().split()
+		if(len(inputString) < 3):
+			break
+		base1 = int(inputString[0])
+		base2 = int(inputString[1])
+		number = inputString[2]
 		if not verify(base1, number):
-			print(number, " is an illegal base ", base1, " number")
+			print number + " is an illegal base " + str(base1) + " number"
 		else:
-			print(number, " base ", base1, " = ", transfer(base1, number, base2), " base ", base2)
+			print number + " base " + str(base1) + " = "  + transfer(base1, number, base2) + " base " + str(base2)
 
 def convert(c):
-	if c[0] > 64 and c[0] < 91:
-		return ord(c[0]) - 55
+	if ord(c[0]) > 64 and ord(c[0]) < 91:
+		return ord(c) - 55
 
-	return ord(c[0]) - 48
+	return ord(c) - 48
 
 def verify(base, number):
 	if len(number) == 1:
@@ -28,8 +31,7 @@ def transfer(base1, number, base2):
 	converted = "";
 	if(totalSum == 0):
 		return "0"
-
-	while total != 0:
+	while totalSum != 0:
 		converted = convertBack(totalSum % base2) + converted
 		totalSum = totalSum / base2
 
@@ -46,7 +48,7 @@ def total(base, number):
 
 def convertBack(digit):
 	if digit > 9:
-		return char(digit + 55)
+		return str(chr(digit + 55))
 
 	return str(digit)
 
